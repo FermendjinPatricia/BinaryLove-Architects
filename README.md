@@ -10,4 +10,4 @@ Requirments:
   - push notification option
   - buying ticket
   - (Optional: mini game with prizes)
-Wireframe link: https://www.figma.com/files/team/1351999173430550886
+Wireframe link: https://www.figma.com/file/j9NDoKkOcuUaK5wnFBfWuY/NearbyNights?type=design&node-id=0-1&mode=design&t=ECYoFMSTYvwRJ1Ve-0
