@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "NearbyNights_project",
-    "slug": "NearbyNights_project",
+    "name": "NearbyNights",
+    "slug": "NearbyNights",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -37,4 +37,3 @@
     }
   }
 }
- 
