@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, ImageBackground, TextInput, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, ImageBackground, TextInput, TouchableOpacity, Text, Pressable } from 'react-native';
 
 export default function LoginPage(){
   const [username, setUsername] = useState('');
@@ -16,7 +16,6 @@ export default function LoginPage(){
   };
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('C:\Users\Patricia\Documents\IC\BinaryLove-Architects\NearbyNights\assets\images\login.jpg')} style={styles.backgroundImage}>
         <View style={styles.formContainer}>
           <TextInput
             style={styles.input}
@@ -34,11 +33,10 @@ export default function LoginPage(){
           <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>Autentificare</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+          <Pressable style={styles.button} onPress={handleSignUp}>
             <Text style={styles.buttonText}>Creează un cont</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
-      </ImageBackground>
     </View>
   );
 };
