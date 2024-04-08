@@ -17,7 +17,7 @@ const LoginPage = () => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('C:\Users\Dudu\Desktop\FACULTA\IC\login_page_backgroundPicture')} style={styles.backgroundImage}>
+      <ImageBackground source={require('C:\Users\Patricia\Documents\IC\login.jpg')} style={styles.backgroundImage}>
         <View style={styles.formContainer}>
           <TextInput
             style={styles.input}
