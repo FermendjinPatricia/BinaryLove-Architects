@@ -16,6 +16,7 @@ export default function LoginPage(){
   };
   return (
     <View style={styles.container}>
+      <ImageBackground source={require('..\\assets\\images\\login.jpg')} style={styles.backgroundImage} >
         <View style={styles.formContainer}>
           <TextInput
             style={styles.input}
@@ -30,13 +31,14 @@ export default function LoginPage(){
             value={password}
             secureTextEntry={true}
           />
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <Pressable style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>Autentificare</Text>
-          </TouchableOpacity>
+          </Pressable>
           <Pressable style={styles.button} onPress={handleSignUp}>
             <Text style={styles.buttonText}>Creează un cont</Text>
           </Pressable>
         </View>
+      </ImageBackground>
     </View>
   );
 };
