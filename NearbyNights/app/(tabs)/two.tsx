@@ -1,31 +1,100 @@
-import { StyleSheet } from 'react-native';
+// 
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
 
-export default function TabTwoScreen() {
+import React, { useState } from 'react';
+import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
+import { CheckBox } from 'react-native-elements';
+
+const RegisterPage = ({ navigation }: { navigation: any }) => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [birthdate, setBirthdate] = useState('');
+  const [isOrganizer, setIsOrganizer] = useState(false);
+
+  const handleRegister = () => {
+    if (isOrganizer) {
+      // Navigare către pagina de organizator
+      console.log('Navigare către pagina de organizator');
+    } else {
+      // Navigare către homepage
+      console.log('Navigare către homepage');
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(200,200,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <View style={styles.formContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Nume utilizator"
+          onChangeText={(text) => setUsername(text)}
+          value={username}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          onChangeText={(text) => setEmail(text)}
+          value={email}
+          keyboardType="email-address"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Data nasterii (YYYY-MM-DD)"
+          onChangeText={(text) => setBirthdate(text)}
+          value={birthdate}
+          keyboardType="numeric"
+        />
+        <View style={styles.checkboxContainer}>
+          <CheckBox
+            checked={isOrganizer}
+            onPress={() => setIsOrganizer(previousState => !previousState)}
+          />
+          <Text style={styles.checkboxLabel}>Doresc să fiu un organizator</Text>
+        </View>
+        <TouchableOpacity style={styles.button} onPress={handleRegister}>
+          <Text style={styles.buttonText}>Înregistrare</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  formContainer: {
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 8,
+    minWidth: 300,
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  input: {
+    marginBottom: 10,
+    padding: 10,
+    borderRadius: 4,
+    backgroundColor: '#f2f2f2',
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  checkboxLabel: {
+    marginLeft: 8,
+  },
+  button: {
+    backgroundColor: '#007bff',
+    padding: 10,
+    borderRadius: 4,
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  buttonText: {
+    color: '#fff',
   },
 });
+
+export default RegisterPage;
