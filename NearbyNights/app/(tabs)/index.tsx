@@ -29,14 +29,14 @@ export default function LoginPage(){
     <View style={styles.container}>
       <ImageBackground source={require('..\\assets\\images\\login.jpg')} style={styles.backgroundImage} >
         <View style={styles.formContainer}>
-          <TextInput style={styles.title}>Log In</TextInput>
-          <TextInput style={styles.username}>Username</TextInput>
+          <Text style={styles.title}>Log In</Text>
+          <Text style={styles.username}>Username</Text>
           <TextInput
             style={styles.input}
             onChangeText={(text) => setUsername(text)}
             value={username}
           />
-          <TextInput style={styles.username}>Password</TextInput>
+          <Text style={styles.username}>Password</Text>
           <TextInput
             style={styles.input}
             onChangeText={(text) => setPassword(text)}
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontFamily: 'press-start-2p',
     color: 'white',
-    fontSize: 35
+    fontSize: 40
   },
   username:{
     alignSelf: 'flex-start',
