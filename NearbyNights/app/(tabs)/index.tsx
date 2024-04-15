@@ -43,12 +43,14 @@ export default function LoginPage(){
             value={password}
             secureTextEntry={true}
           />
+           <View style={styles.buttonContainer}>
           <Pressable style={styles.buttonCancel} onPress={handleLogin}>
             <Text style={styles.buttonText}>Cancel</Text>
           </Pressable>
           <Pressable style={styles.buttonLogin} onPress={handleSignUp}>
             <Text style={styles.buttonText}>Login</Text>
           </Pressable>
+        </View>
         </View>
       </ImageBackground>
     </View>
@@ -76,6 +78,11 @@ const styles = StyleSheet.create({
 
 
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
   backgroundImage: {
     flex: 1,
     width: '100%',
@@ -101,7 +108,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     alignItems: 'center',
     marginVertical: 5,
-    alignSelf:'flex-start'
+    alignSelf:'center'
   },
   buttonLogin: {
     backgroundColor: '#68021F',
@@ -109,7 +116,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     alignItems: 'center',
     marginVertical: 5,
-    alignSelf:'flex-end'
+    alignSelf:'center'
   },
   buttonText: {
     color: '#fff',
