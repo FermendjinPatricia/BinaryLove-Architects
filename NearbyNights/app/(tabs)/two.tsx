@@ -70,17 +70,19 @@ const RegisterPage = ({ navigation }: { navigation: any }) => {
               onPress={() => setIsOrganizer((previousState) => !previousState)}
             />
             <Text style={styles.checkboxLabel}>
-              <Text style={styles.checkboxInput}>I want to be an organizer</Text>
+              <Text style={styles.checkboxInput}>
+                I want to be an organizer
+              </Text>
             </Text>
           </View>
           <View style={styles.buttonContainer}>
-          <Pressable style={styles.buttonCancel} onPress={handleCancel}>
-            <Text style={styles.buttonText}>Cancel</Text>
-          </Pressable>
-          <Pressable style={styles.buttonRegister} onPress={handleRegister}>
-            <Text style={styles.buttonText}>Register</Text>
-          </Pressable>
-        </View>
+            <Pressable style={styles.buttonCancel} onPress={handleCancel}>
+              <Text style={styles.buttonText}>Cancel</Text>
+            </Pressable>
+            <Pressable style={styles.buttonRegister} onPress={handleRegister}>
+              <Text style={styles.buttonText}>Register</Text>
+            </Pressable>
+          </View>
         </View>
       </ImageBackground>
     </View>
@@ -97,21 +99,21 @@ const styles = StyleSheet.create({
     color: "white",
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 10,
   },
   formContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0)',
+    backgroundColor: "rgba(255, 255, 255, 0)",
     padding: 20,
     borderRadius: 8,
     minWidth: 300,
   },
-  username:{
-    alignSelf: 'flex-start',
-    fontFamily: 'press-start-2p',
-    color: 'white',
-    fontSize: 15
+  username: {
+    alignSelf: "flex-start",
+    fontFamily: "press-start-2p",
+    color: "white",
+    fontSize: 15,
   },
   backgroundImage: {
     flex: 1,
@@ -124,13 +126,13 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontFamily: "press-start-2p",
     color: "white",
-    fontSize: 40,
+    fontSize: 30,
   },
   input: {
     marginBottom: 10,
     padding: 10,
     borderRadius: 4,
-    backgroundColor: '#DA6485',
+    backgroundColor: "#DA6485",
   },
   checkboxContainer: {
     flexDirection: "row",
@@ -148,24 +150,24 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   buttonCancel: {
-    backgroundColor: '#68021F',
+    backgroundColor: "#68021F",
     padding: 10,
     borderRadius: 4,
-    alignItems: 'center',
+    alignItems: "center",
     marginVertical: 5,
-    alignSelf:'center'
+    alignSelf: "center",
   },
   buttonRegister: {
-    backgroundColor: '#68021F',
+    backgroundColor: "#68021F",
     padding: 10,
     borderRadius: 4,
-    alignItems: 'center',
+    alignItems: "center",
     marginVertical: 5,
-    alignSelf:'center'
+    alignSelf: "center",
   },
   buttonText: {
-    color: '#fff',
-    fontFamily: 'press-start-2p',
+    color: "#fff",
+    fontFamily: "press-start-2p",
   },
 });
 
