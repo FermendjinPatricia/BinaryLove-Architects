@@ -21,13 +21,14 @@ export default function RegisterPage({ navigation }) {
 
   const handleCancel = () => {
     // Navigare către pagina de login
+    navigation.navigate('Home');
     console.log("Navigare către pagina de login");
   };
 
   return (
     <View style={styles.container}> 
       <ImageBackground source={require('..\\assets\\login.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.title}>NearbyNights</Text>
+      <View style={styles.formContainer}>
         <Text style={styles.title}>Register a new account</Text>
         <Text style={styles.username}>Username</Text>
         <TextInput
@@ -51,13 +52,15 @@ export default function RegisterPage({ navigation }) {
         />
         <View style={styles.checkboxContainer}>
             <CheckBox
-                value={isOrganizer}
-                onValueChange={setIsOrganizer}
+              checked={isOrganizer}
+              onPress={() => setIsOrganizer((previousState) => !previousState)}
             />
             <Text style={styles.checkboxLabel}>
+              <Text style={styles.checkboxInput}>
                 I want to be an organizer
+              </Text>
             </Text>
-        </View>
+          </View>
 
 
         <View style={styles.buttonContainer}>
@@ -68,6 +71,7 @@ export default function RegisterPage({ navigation }) {
             <Text style={styles.buttonText}>Register</Text>
           </TouchableOpacity>
         </View>
+        </View>
       </ImageBackground>
       <StatusBar style="auto" />
     </View>
@@ -76,84 +80,83 @@ export default function RegisterPage({ navigation }) {
 
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    checkboxInput: {
-      color: "white",
-    },
-    buttonContainer: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      marginBottom: 10,
-    },
-    formContainer: {
-      backgroundColor: "rgba(255, 255, 255, 0)",
-      padding: 20,
-      borderRadius: 8,
-      minWidth: 300,
-    },
-    username: {
-      alignSelf: "center",
-      fontFamily: "press-start-2p",
-      color: "white",
-      fontSize: 15,
-    },
-    backgroundImage: {
-      flex: 1,
-      width: "100%",
-      height: "100%",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    title: {
-      alignSelf: "center",
-      fontFamily: "press-start-2p",
-      color: "white",
-      fontSize: 30,
-    },
-    input: {
-      marginBottom: 10,
-      padding: 10,
-      borderRadius: 4,
-      backgroundColor: "#DA6485",
-    },
-    checkboxContainer: {
-      flexDirection: "row",
-      alignItems: "center",
-      marginBottom: 10,
-    },
-    checkboxLabel: {
-      marginLeft: 8,
-      color: 'white'
-    },
-    button: {
-      backgroundColor: "#007bff",
-      padding: 10,
-      borderRadius: 4,
-      alignItems: "center",
-      marginVertical: 5,
-    },
-    buttonCancel: {
-      backgroundColor: "#68021F",
-      padding: 10,
-      borderRadius: 4,
-      alignItems: "center",
-      marginVertical: 5,
-      alignSelf: "center",
-    },
-    buttonRegister: {
-      backgroundColor: "#68021F",
-      padding: 10,
-      borderRadius: 4,
-      alignItems: "center",
-      marginVertical: 5,
-      alignSelf: "center",
-    },
-    buttonText: {
-      color: "#fff",
-      fontFamily: "press-start-2p",
-    },
-  });
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  checkboxInput: {
+    color: "white",
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+  formContainer: {
+    backgroundColor: "rgba(255, 255, 255, 0)",
+    padding: 20,
+    borderRadius: 8,
+    minWidth: 300,
+  },
+  username: {
+    alignSelf: "flex-start",
+    fontFamily: "press-start-2p",
+    color: "white",
+    fontSize: 15,
+  },
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    alignSelf: "center",
+    fontFamily: "press-start-2p",
+    color: "white",
+    fontSize: 40,
+  },
+  input: {
+    marginBottom: 10,
+    padding: 10,
+    borderRadius: 4,
+    backgroundColor: "#DA6485",
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  checkboxLabel: {
+    marginLeft: 8,
+  },
+  button: {
+    backgroundColor: "#007bff",
+    padding: 10,
+    borderRadius: 4,
+    alignItems: "center",
+    marginVertical: 5,
+  },
+  buttonCancel: {
+    backgroundColor: "#68021F",
+    padding: 10,
+    borderRadius: 4,
+    alignItems: "center",
+    marginVertical: 5,
+    alignSelf: "center",
+  },
+  buttonRegister: {
+    backgroundColor: "#68021F",
+    padding: 10,
+    borderRadius: 4,
+    alignItems: "center",
+    marginVertical: 5,
+    alignSelf: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontFamily: "press-start-2p",
+  },
+});

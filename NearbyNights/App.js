@@ -1,37 +1,59 @@
-import React, { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState } from "react";
+import { StatusBar } from "expo-status-bar";
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
+import * as Font from "expo-font";
+
+// Load custom fonts
+async function loadFonts() {
+  await Font.loadAsync({
+    "press-start-2p": require("..\\assets\\fonts\\PressStart2P-Regular.ttf"),
+  });
+}
+
+loadFonts();
 
 export default function App({ navigation }) {
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const handleLogin = () => {
     // Logica pentru autentificare
-    console.log('Autentificare cu:', username, password);
-    navigation.navigate('LoginPage');
+    console.log("Autentificare cu:", username, password);
+    navigation.navigate("LoginPage");
   };
 
   const handleSignUp = () => {
     // Navigare către pagina de înregistrare
-    console.log('Navigare către pagina de înregistrare');
-    navigation.navigate('RegisterPage');
+    console.log("Navigare către pagina de înregistrare");
+    navigation.navigate("RegisterPage");
   };
 
   return (
-    <View style={styles.container}> 
-      <ImageBackground source={require('..\\assets\\login.jpg')} style={styles.backgroundImage}>
-        <Text style={styles.title}>NearbyNights</Text>
-        
-
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.buttonLogin} onPress={handleLogin}>
-            <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonRegister} onPress={handleSignUp}>
-            <Text style={styles.buttonText}>Register</Text>
-          </TouchableOpacity>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("..\\assets\\login.jpg")}
+        style={styles.backgroundImage}
+      >
+        <View style={styles.formContainer}>
+          <Text style={styles.title}>NearbyNights</Text>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.buttonLogin} onPress={handleLogin}>
+              <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRegister}
+              onPress={handleSignUp}
+            >
+              <Text style={styles.buttonText}>Register</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ImageBackground>
       <StatusBar style="auto" />
@@ -100,7 +122,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   buttonLogin: {
-    backgroundColor: "#D21312",
+    backgroundColor: "#68021F",
     padding: 10,
     borderRadius: 4,
     alignItems: "center",
@@ -108,7 +130,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonRegister: {
-    backgroundColor: "#D21312",
+    backgroundColor: "#68021F",
     padding: 10,
     borderRadius: 4,
     alignItems: "center",
