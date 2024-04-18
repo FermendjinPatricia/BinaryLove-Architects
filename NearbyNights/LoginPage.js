@@ -29,6 +29,12 @@ export default function LoginPage({ navigation }) {
     console.log("Navigare către pagina de înregistrare");
     navigation.navigate("organizerUserPage");
   };
+  
+  const handleLoginAdmin = () => {
+    // Navigare către pagina de înregistrare
+    console.log("Navigare către pagina de înregistrare");
+    navigation.navigate("adminPage");
+  };
 
   async function loadFonts() {
     await Font.loadAsync({
@@ -70,10 +76,13 @@ export default function LoginPage({ navigation }) {
             <TouchableOpacity style={styles.buttonLogin} onPress={handleSignUp}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonLoginOrganizer} onPress={handleLoginOrganizer}>
+          </View>
+          <TouchableOpacity style={styles.buttonLoginOrganizer} onPress={handleLoginOrganizer}>
               <Text style={styles.buttonText}>Login Organizer</Text>
             </TouchableOpacity>
-          </View>
+            <TouchableOpacity style={styles.buttonLogin} onPress={handleLoginAdmin}>
+              <Text style={styles.buttonText}>Login Admin</Text>
+            </TouchableOpacity>
         </View>
       </ImageBackground>
       <StatusBar style="auto" />
@@ -132,6 +141,14 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonLogin: {
+    backgroundColor: "#68021F",
+    padding: 10,
+    borderRadius: 4,
+    alignItems: "center",
+    marginVertical: 5,
+    alignSelf: "center",
+  },
+  buttonLoginOrganizer: {
     backgroundColor: "#68021F",
     padding: 10,
     borderRadius: 4,
