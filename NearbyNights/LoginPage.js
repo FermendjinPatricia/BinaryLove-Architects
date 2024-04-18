@@ -161,3 +161,5 @@ const styles = StyleSheet.create({
     fontFamily: "press-start-2p",
   },
 });
+
+//mongodb+srv://<username>:<password>@nearbynights.yzzb8xb.mongodb.net/

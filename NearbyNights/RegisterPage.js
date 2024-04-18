@@ -9,20 +9,38 @@ export default function RegisterPage({ navigation }) {
     const [isOrganizer, setIsOrganizer] = useState(false);
 
 
-  const handleRegister = () => {
-    if (isOrganizer) {
-      // Navigare către pagina de organizator
-      console.log("Navigare către pagina de organizator");
-    } else {
-      // Navigare către homepage
-      console.log("Navigare către homepage");
-    }
-  };
+    const handleRegister = () => {
+      const userData = {
+        username: username,
+        password: password,
+        isOrganizer: isOrganizer
+      };
+    
+      fetch('http://localhost:8081', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        navigation.navigate('mainPageUser');
+        // Aici poți face orice altă acțiune, cum ar fi redirecționarea către altă pagină sau afișarea unui mesaj de succes
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Aici poți afișa un mesaj de eroare pentru utilizator
+      });
+    };
+    
 
   const handleCancel = () => {
     // Navigare către pagina de login
     navigation.navigate('Home');
     console.log("Navigare către pagina de login");
+    navigation.navigate('Home');
   };
 
   return (
