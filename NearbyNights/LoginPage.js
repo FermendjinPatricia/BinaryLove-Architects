@@ -24,6 +24,12 @@ export default function LoginPage({ navigation }) {
     navigation.navigate("mainPageUser");
   };
 
+  const handleLoginOrganizer = () => {
+    // Navigare către pagina de înregistrare
+    console.log("Navigare către pagina de înregistrare");
+    navigation.navigate("organizerUserPage");
+  };
+
   async function loadFonts() {
     await Font.loadAsync({
       "press-start-2p": require("..\\assets\\fonts\\PressStart2P-Regular.ttf"),
@@ -63,6 +69,9 @@ export default function LoginPage({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonLogin} onPress={handleSignUp}>
               <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonLoginOrganizer} onPress={handleLoginOrganizer}>
+              <Text style={styles.buttonText}>Login Organizer</Text>
             </TouchableOpacity>
           </View>
         </View>

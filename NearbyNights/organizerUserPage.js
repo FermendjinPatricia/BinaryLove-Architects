@@ -18,35 +18,40 @@ export default function mainPageUser({ navigation }) {
     console.log("Autentificare cu:", username, password);
   };
 
-  const handleSearchParties = () => {
-    // Navigare către pagina de înregistrare
+  const handleAddParty = () => {
+    // Navigare către pagina de add party
     console.log("Navigare către pagina de înregistrare");
   };
 
   const handleYourParties = () => {
-    // Navigare către pagina de înregistrare
+    // Navigare către pagina your parties
+    console.log("Navigare către pagina de înregistrare");
+  };
+
+  const handleSeeYourRates = () => {
+    // Navigare către pagina your parties
     console.log("Navigare către pagina de înregistrare");
   };
 
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("..\\assets\\userPageImage.jpg")}
+        source={require("..\\assets\\organizerPageImage.jpg")}
         style={styles.backgroundImage}
       >
-        <Text style={styles.title}>Main Page User</Text>
+        <Text style={styles.title}>Organizer User Page</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={styles.buttonSearchParties}
-            onPress={handleSearchParties}
-          >
-            <Text style={styles.buttonText}>Search Parties</Text>
+            style={styles.buttonAddParty} onPress={handleAddParty}>
+            <Text style={styles.buttonText}>Add Party</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.buttonYourParties}
-            onPress={handleYourParties}
-          >
+            style={styles.buttonYourParties} onPress={handleYourParties}>
             <Text style={styles.buttonText}>Your Parties</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonSeeYourRates} onPress={handleSeeYourRates}>
+            <Text style={styles.buttonText}>See your Rates</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.buttonLogOut} onPress={handleLogOut}>
             <Text style={styles.buttonText}>Log Out</Text>
@@ -71,7 +76,7 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   buttonLogOut: {
-    backgroundColor: "#A52D2D",
+    backgroundColor: "#DA5A17",
     padding: 10,
     borderRadius: 4,
     alignItems: "center",
@@ -107,7 +112,7 @@ const styles = StyleSheet.create({
   title: {
     alignSelf: "center",
     fontFamily: "press-start-2p",
-    color: "black",
+    color: "#FCB38D",
     fontSize: 40,
   },
   input: {
@@ -124,8 +129,8 @@ const styles = StyleSheet.create({
   checkboxLabel: {
     marginLeft: 8,
   },
-  buttonSearchParties: {
-    backgroundColor: "#D21312",
+  buttonAddParty: {
+    backgroundColor: "#B6470C",
     padding: 10,
     borderRadius: 4,
     alignItems: "center",
@@ -133,7 +138,15 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonYourParties: {
-    backgroundColor: "#D21312",
+    backgroundColor: "#B6470C",
+    padding: 10,
+    borderRadius: 4,
+    alignItems: "center",
+    marginVertical: 5,
+    alignSelf: "center",
+  },
+  buttonSeeYourRates: {
+    backgroundColor: "#B6470C",
     padding: 10,
     borderRadius: 4,
     alignItems: "center",

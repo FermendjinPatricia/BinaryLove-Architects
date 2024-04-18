@@ -4,6 +4,7 @@ import App from './App';
 import LoginPage from './LoginPage'; // Asigură-te că ai definit corect calea către fișierul LoginPage.js
 import mainPageUser from './mainPageUser';
 import RegisterPage from './RegisterPage';
+import organizerUserPage from './organizerUserPage';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function Main() {
         <Stack.Screen name="LoginPage" component={LoginPage} />
         <Stack.Screen name="RegisterPage" component={RegisterPage} />
         <Stack.Screen name="mainPageUser" component={mainPageUser} />
+        <Stack.Screen name="organizerUserPage" component={organizerUserPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
