@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   buttonLogOut: {
-    backgroundColor: "#DA5A17",
+    backgroundColor: "#DA2A17",
     padding: 10,
     borderRadius: 4,
     alignItems: "center",
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   formContainer: {
-    backgroundColor: "rgba(255, 255, 255, 0)",
+    backgroundColor: "rgba(255, 200, 255, 0)",
     padding: 20,
     borderRadius: 8,
     minWidth: 300,
