@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   title: {
     alignSelf: "center",
     fontFamily: "press-start-2p",
-    color: "white",
+    color: "black",
     fontSize: 40,
   },
   username: {
