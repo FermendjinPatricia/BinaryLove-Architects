@@ -16,7 +16,7 @@ export default function RegisterPage({ navigation }) {
         isOrganizer: isOrganizer
       };
     
-      fetch('http://localhost:8081', {
+      fetch('http://localhost:8082/api/users/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
