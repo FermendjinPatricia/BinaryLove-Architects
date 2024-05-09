@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   checkboxInput: {
-    color: "white",
+    color: "black",
   },
   buttonContainer: {
     justifyContent: "center",
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   username: {
     alignSelf: "flex-start",
     fontFamily: "press-start-2p",
-    color: "white",
+    color: "black",
     fontSize: 15,
   },
   backgroundImage: {
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonText: {
-    color: "#fff",
+    color: "black",
     fontFamily: "press-start-2p",
   },
 });
