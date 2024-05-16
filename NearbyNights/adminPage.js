@@ -15,12 +15,12 @@ export default function mainPageUser({ navigation }) {
   const handleLogOut = () => {
     // Logica pentru autentificare
     navigation.navigate("LoginPage");
-    console.log("Autentificare cu:", username, password);
+    console.log("Log in with:", username, password);
   };
 
   const handleSeeReports = () => {
     // Navigare către pagina See Reports
-    console.log("Navigare către pagina de înregistrare");
+    console.log("Go to register page");
   };
 
   return (
@@ -29,7 +29,7 @@ export default function mainPageUser({ navigation }) {
         source={require("..\\assets\\organizerPageImage.jpg")}
         style={styles.backgroundImage}
       >
-        <Text style={styles.title}>Admin</Text>
+        <Text style={styles.title}>Administrator</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buttonSeeReports} onPress={handleSeeReports}>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   formContainer: {
-    backgroundColor: "rgba(255, 200, 255, 0)",
+    backgroundColor: "rgba(200, 200, 255, 0)",
     padding: 20,
     borderRadius: 8,
     minWidth: 300,
