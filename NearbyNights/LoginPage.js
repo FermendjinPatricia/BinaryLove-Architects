@@ -99,13 +99,13 @@ const styles = StyleSheet.create({
   title: {
     alignSelf: "center",
     fontFamily: "press-start-2p",
-    color: "black",
+    color: "white",
     fontSize: 40,
   },
   username: {
     alignSelf: "flex-start",
     fontFamily: "press-start-2p",
-    color: "white",
+    color: "black",
     fontSize: 15,
   },
   buttonContainer: {
