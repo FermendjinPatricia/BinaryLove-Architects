@@ -15,12 +15,13 @@ export default function mainPageUser({ navigation }) {
   const handleLogOut = () => {
     // Logica pentru autentificare
     navigation.navigate("LoginPage");
-    console.log("Log in with:", username, password);
+    console.log("Autentificare cu:", username, password);
   };
 
   const handleSeeReports = () => {
     // Navigare către pagina See Reports
-    console.log("Go to register page");
+    navigation.navigate("seeYourReportsPage");
+    console.log("Navigare către pagina de înregistrare");
   };
 
   return (
@@ -29,7 +30,7 @@ export default function mainPageUser({ navigation }) {
         source={require("..\\assets\\organizerPageImage.jpg")}
         style={styles.backgroundImage}
       >
-        <Text style={styles.title}>Administrator</Text>
+        <Text style={styles.title}>Admin</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buttonSeeReports} onPress={handleSeeReports}>
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   checkboxInput: {
-    color: "black",
+    color: "white",
   },
   buttonContainer: {
     justifyContent: "center",
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   formContainer: {
-    backgroundColor: "rgba(200, 200, 255, 0)",
+    backgroundColor: "rgba(255, 200, 255, 0)",
     padding: 20,
     borderRadius: 8,
     minWidth: 300,
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
   username: {
     alignSelf: "flex-start",
     fontFamily: "press-start-2p",
-    color: "black",
+    color: "white",
     fontSize: 15,
   },
   backgroundImage: {
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonText: {
-    color: "black",
+    color: "#fff",
     fontFamily: "press-start-2p",
   },
 });

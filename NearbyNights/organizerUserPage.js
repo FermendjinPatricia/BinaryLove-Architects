@@ -19,17 +19,19 @@ export default function mainPageUser({ navigation }) {
   };
 
   const handleAddParty = () => {
-    // Navigare către pagina de add party
+    navigation.navigate("addPartyPage");
     console.log("Navigare către pagina de înregistrare");
   };
 
   const handleYourParties = () => {
     // Navigare către pagina your parties
+    navigation.navigate("yourPartiesPage");
     console.log("Navigare către pagina de înregistrare");
   };
 
   const handleSeeYourRates = () => {
     // Navigare către pagina your parties
+    navigation.navigate("seeYourRatesPage");
     console.log("Navigare către pagina de înregistrare");
   };
 

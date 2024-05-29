@@ -20,11 +20,13 @@ export default function mainPageUser({ navigation }) {
 
   const handleSearchParties = () => {
     // Navigare către pagina de înregistrare
+    navigation.navigate("userSearchParties");
     console.log("Navigare către pagina de înregistrare");
   };
 
   const handleYourParties = () => {
     // Navigare către pagina de înregistrare
+    navigation.navigate("userYourPartyPage");
     console.log("Navigare către pagina de înregistrare");
   };
 
