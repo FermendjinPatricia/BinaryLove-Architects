@@ -11,7 +11,7 @@ import yourPartiesPage from './yourPartiesPage';
 import seeYourRatesPage from './seeYourRatesPage';
 import seeYourReportsPage from './seeYourReportsPage';
 // import userYourPartyPage from './userYourPartyPage';
-//import userSearchParties from './userSearchParties';
+import userSearchParties from './userSearchParties';
 
 const Stack = createStackNavigator();
 
@@ -32,7 +32,7 @@ export default function Main() {
         <Stack.Screen name="seeYourRatesPage" component={seeYourRatesPage} />
         <Stack.Screen name="seeYourReportsPage" component={seeYourReportsPage} />
         {/* <Stack.Screen name="userYourPartyPage" component={userYourPartyPage} />*/}
-        {/* <Stack.Screen name="userSearchParties" component={userSearchParties} />  */}
+        <Stack.Screen name="userSearchParties" component={userSearchParties} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
