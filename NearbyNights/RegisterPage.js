@@ -13,9 +13,9 @@ export default function RegisterPage({ navigation }) {
       const userData = {
         username: username,
         password: password,
-        isOrganizer: isOrganizer
+        isOrganizer: isOrganizer,
       };
-    
+  
       fetch('http://localhost:8082/api/users/register', {
         method: 'POST',
         headers: {
@@ -23,18 +23,21 @@ export default function RegisterPage({ navigation }) {
         },
         body: JSON.stringify(userData),
       })
-      .then(response => response.json())
+      .then(async response => {
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(errorText);
+        }
+        return response.json();
+      })
       .then(data => {
         console.log(data);
         navigation.navigate('mainPageUser');
-        // Aici poți face orice altă acțiune, cum ar fi redirecționarea către altă pagină sau afișarea unui mesaj de succes
       })
       .catch(error => {
-        console.error('Error:', error);
-        // Aici poți afișa un mesaj de eroare pentru utilizator
+        console.error('Error:', error.message);
       });
     };
-    
 
   const handleCancel = () => {
     // Navigare către pagina de login
