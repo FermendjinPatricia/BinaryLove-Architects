@@ -31,8 +31,34 @@ router.post('/register', async (req, res) => {
 
     res.json({ msg: 'Utilizator înregistrat cu succes' });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ msg: 'Eroare de server', error: err.message }); // Return error as JSON
+    console.error('Server error:', err);
+    res.status(500).json({ msg: 'Eroare de server', error: err.message });
+  }
+});
+
+// Route pentru autentificarea unui utilizator
+router.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    // Găsește utilizatorul în baza de date
+    let user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(400).json({ msg: 'Utilizatorul nu există' });
+    }
+
+    // Verifică parola
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ msg: 'Parola este incorectă' });
+    }
+
+    res.json({ msg: 'Autentificare reușită', user });
+  } catch (err) {
+    console.error('Server error:', err);
+    res.status(500).json({ msg: 'Eroare de server', error: err.message });
   }
 });
 

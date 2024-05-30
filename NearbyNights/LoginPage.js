@@ -18,10 +18,37 @@ export default function LoginPage({ navigation }) {
     navigation.navigate("Home");
   };
 
-  const handleSignUp = () => {
-    // Navigare către pagina de înregistrare
-    console.log("Navigare către pagina de înregistrare");
-    navigation.navigate("mainPageUser");
+  const handleLogin = () => {
+    const userData = {
+      username: username,
+      password: password,
+    };
+
+    fetch('http://localhost:8082/api/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
+    .then(async response => {
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      if (data.user.isOrganizer) {
+        navigation.navigate('organizerUserPage');
+      } else {
+        navigation.navigate('mainPageUser');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error.message);
+    });
   };
 
   const handleLoginOrganizer = () => {
@@ -73,7 +100,7 @@ export default function LoginPage({ navigation }) {
             >
               <Text style={styles.buttonText}>Cancel</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonLogin} onPress={handleSignUp}>
+            <TouchableOpacity style={styles.buttonLogin} onPress={handleLogin}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
           </View>
